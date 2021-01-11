@@ -81,6 +81,21 @@
         android:textColor="#ffffff"
         android:textSize="23sp" />
 
+    <ImageView
+        android:id="@+id/mute_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="716dp"
+        android:layout_marginRight="716dp"
+        android:layout_marginBottom="330dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:onClick="onClick"
+        android:src="@drawable/unmuted"
+        android:textSize="23sp" />
+
     <TextView
         android:id="@+id/id_question"
         android:layout_width="229dp"

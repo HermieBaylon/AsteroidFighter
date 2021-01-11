@@ -20,8 +20,35 @@ public class Audio_Activity_Game {
 
     /**
      * initializes all the MediaPlayers
-     * @param theContext activity to play audio in
+    // * @param theContext activity to play audio in
      */
+
+    private boolean muted = false;
+
+    public void mute(){
+        for(MediaPlayer player : Audio_Activity_Game.myActivityPlayers)
+        {
+            player.setVolume(0, 0);
+        }
+        muted = true;
+
+    }
+
+    public void unmute(){
+        for(MediaPlayer player : Audio_Activity_Game.myActivityPlayers)
+        {
+            player.setVolume((float).5, (float).5);
+        }
+        muted = false;
+
+    }
+
+    public boolean isMuted(){
+    return muted;
+    }
+
+
+
     public Audio_Activity_Game(Context theContext)
     {
         //set looping for the media that needs to loop (background music)

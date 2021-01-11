@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -97,6 +98,16 @@ public class Activity_Game extends AppCompatActivity {
 
         //releases the MediaPlayers from the main menu to free up resources
         Audio_Activity_Menu_Main.releasePlayers();
+
+     /*   ImageView muteButton;
+        muteButton = findViewById(R.id.mute_button);
+        muteButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+
+            }
+        });
+*/
     }
 
     /**
@@ -196,7 +207,24 @@ public class Activity_Game extends AppCompatActivity {
             //determines if the question is correct and executes methods accordingly
             //i.e. if question is right, shoot and play correct sound and go to next question
             //if question is wrong, deduct point and play wrong answer sound
-            switch (view.getId()){
+        ImageView muteButton;
+        muteButton = findViewById(R.id.mute_button);
+
+
+        switch (view.getId()){
+
+                case R.id.mute_button:
+                    if(myAudio.isMuted()){
+                        myAudio.unmute();
+                        muteButton.setImageResource(R.drawable.unmuted);
+
+                    }
+                    else if(myAudio.isMuted() == false){
+                        myAudio.mute();
+                        muteButton.setImageResource(R.drawable.muted);
+
+
+                    }
 
                 case R.id.ans_button1:
                     if(myButton1.getText().equals(myAns + "")){
